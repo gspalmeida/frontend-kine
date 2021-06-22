@@ -22,10 +22,10 @@ import { SideBarContext } from "../../contexts/SideBarContext";
 import { useLocation } from "react-router-dom";
 
 const Sidebar: React.FC = () => {
-  const arr = ["/estoque-atual", "/gestao-de-os"];
+  const notCloseSidebar = ["/estoque-atual", "/gestao-de-os"];
 
   const [alwaysOpen, setAlwaysOpen] = useState(false);
-  const { activePage, setActivePage } = useContext(SideBarContext);
+  const {activePage, setActivePage } = useContext(SideBarContext);
 
   const [name, setName] = useState("");
   const [avatar, setAvatar] = useState<File | string>("");
@@ -36,8 +36,8 @@ const Sidebar: React.FC = () => {
   const location = useLocation();
 
   useEffect(() => {
-    setAlwaysOpen(arr.includes(location.pathname));
-  }, [arr, location, setAlwaysOpen]);
+    setAlwaysOpen(notCloseSidebar.includes(location.pathname));
+  }, [location, notCloseSidebar, setAlwaysOpen]);
 
   const handleChange = (files: FileList | null) => {
     if (files) {
@@ -54,6 +54,7 @@ const Sidebar: React.FC = () => {
       setAvatarUrl(data.avatarUrl);
       setName(data.name);
     } catch (error) {
+      console.error('Error on "getUser" method');     
       console.log(error);
     }
   }
@@ -98,14 +99,14 @@ const Sidebar: React.FC = () => {
             <Icon active={activePage === 0} />
             Início
           </MenuItem>
-          {/*<MenuItem
+          <MenuItem
             to="/gestao-de-os"
             active={activePage === 1}
             onClick={() => setActivePage(1)}
           >
             <Icon active={activePage === 1} />
             Nova OS
-          </MenuItem>*/}
+          </MenuItem>
           <MenuItem
             to="/estoque-atual"
             active={activePage === 2}
