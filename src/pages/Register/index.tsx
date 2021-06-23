@@ -38,8 +38,7 @@ const Register: React.FC = () => {
       name,
       email,
       password,
-      avatarUrl,
-      awaitingApproval: true,
+      avatarUrl
     });
     localStorage.setItem("@kine:id", data.id);
 

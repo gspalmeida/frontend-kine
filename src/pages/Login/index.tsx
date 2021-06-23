@@ -12,7 +12,7 @@ const Login: React.FC = () => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     try {
-      await api.post("/login", { email, password });
+      await api.post("/auth", { email, password });
     } catch (error) {
       console.log(error);
     }
