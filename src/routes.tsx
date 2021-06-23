@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Switch, Route, useHistory } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -10,6 +10,8 @@ import Sidebar from "./components/Sidebar";
 
 const Routes: React.FC = () => {
   return (
+    // TODO Por que o Browser Router está em um fragment?
+    // TODO Por que algumas routes tem 'exact path' e outras não? 
     <>
       <BrowserRouter>
         <Sidebar />

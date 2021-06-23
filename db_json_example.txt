@@ -1,0 +1,152 @@
+{
+  "users": [
+    {
+      "name": "Heitor Franco2",
+      "email": "heitorfranco2@gmail.com",
+      "password": "123456",
+      "avatarUrl": "blob:http://localhost:3000/e5f0ab20-0bfe-4e16-87e2-6f5112e43985",
+      "awaitingApproval": false,
+      "disapproved": true,
+      "id": 3
+    },
+    {
+      "name": "Heitor Franco444",
+      "email": "heitor@gmail.com",
+      "password": "123456",
+      "avatarUrl": "blob:http://localhost:3000/38e981d8-9e2a-44a4-ba8f-df613ac99e52",
+      "awaitingApproval": false,
+      "id": 4,
+      "disapproved": true
+    },
+    {
+      "name": "Heitor Franco",
+      "email": "heitor@gmail.com",
+      "password": "123456",
+      "avatarUrl": "blob:http://localhost:3000/5081e364-d269-4b85-8adc-c51b300248c9",
+      "awaitingApproval": false,
+      "id": 5
+    },
+    {
+      "name": "Heitor Franco",
+      "email": "heitorfranco04@gmail.com",
+      "password": "12345",
+      "avatarUrl": "/static/media/user.a6143582.png",
+      "awaitingApproval": true,
+      "id": 6
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Parafuso",
+      "value": 10,
+      "quantity": 1000,
+      "unitOfMeasure": "x1",
+      "costCenter": "x2",
+      "stockLimit": 2000
+    },
+  ],
+  "so": [
+    {
+      "id": 1,
+      "SONumber": "001",
+      "client": "Heitor(cliente)",
+      "seller": "Heitor(vendedor)",
+      "responsibleTechnician": "Heitor(Tecnico)",
+      "costOfSO": "2000",
+      "running": true,
+      "completed": false,
+      "closed": false,
+      "openingDate": "16/06/21",
+      "closingDate": "17/06/21",
+      "materials": [
+        {
+          "name": "Parafuso",
+          "quantity": 2000
+        }
+      ]
+    }
+  ],
+  "suppliers": [
+    {
+      "id": 1,
+      "name": "Heitor Franco"
+    }
+  ],
+  "purchases": [
+    {
+      "id": 1,
+      "supplier": "Heitor - Supplier",
+      "totalPurchaseAmount": "2000",
+      "products": [
+        {
+          "id": 1,
+          "name": "x",
+          "value": 10,
+          "quantity": 100,
+          "unitOfMeasure": "x",
+          "costCenter": "x",
+          "stockLimit": 202
+        }
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "name": "Parafuso",
+      "id": 1
+    },
+  ],
+  "unitOfMeasures": [
+    {
+      "name": "un.",
+      "description": "Unidade",
+      "id": 1
+    },
+    {
+      "name": "cx.",
+      "description": "Caixa",
+      "id": 2
+    }
+  ],
+  "costCenters": [
+    {
+      "name": "centro de custo",
+      "id": 1
+    },
+    {
+      "name": "centro de custo2",
+      "id": 2
+    }
+  ],
+  "clients": [
+    {
+      "name": "Cliente",
+      "id": 1
+    },
+    {
+      "name": "Cliente Teste",
+      "id": 3
+    }
+  ],
+  "sellers": [
+    {
+      "name": "Vendedor",
+      "id": 1
+    },
+    {
+      "name": "Vendedor Teste",
+      "id": 3
+    }
+  ],
+  "responsibleTechnicians": [
+    {
+      "name": "Técnico",
+      "id": 1
+    },
+    {
+      "name": "Técnico Teste",
+      "id": 4
+    }
+  ]
+}

@@ -29,10 +29,10 @@ import { AiFillHome } from "react-icons/ai";
 import { FaUserEdit } from "react-icons/fa";
 
 const Sidebar: React.FC = () => {
-  const arr = ["/estoque-atual", "/gestao-de-os"];
+  const notCloseSidebar = ["/estoque-atual", "/gestao-de-os"];
 
   const [alwaysOpen, setAlwaysOpen] = useState(false);
-  const { activePage, setActivePage } = useContext(SideBarContext);
+  const {activePage, setActivePage } = useContext(SideBarContext);
 
   const [name, setName] = useState("");
   const [avatar, setAvatar] = useState<File | string>("");
@@ -43,8 +43,8 @@ const Sidebar: React.FC = () => {
   const location = useLocation();
 
   useEffect(() => {
-    setAlwaysOpen(arr.includes(location.pathname));
-  }, [arr, location, setAlwaysOpen]);
+    setAlwaysOpen(notCloseSidebar.includes(location.pathname));
+  }, [location, notCloseSidebar, setAlwaysOpen]);
 
   const handleChange = (files: FileList | null) => {
     if (files) {
@@ -61,6 +61,7 @@ const Sidebar: React.FC = () => {
       setAvatarUrl(data.avatarUrl);
       setName(data.name);
     } catch (error) {
+      console.error('Error on "getUser" method');     
       console.log(error);
     }
   }
@@ -115,7 +116,6 @@ const Sidebar: React.FC = () => {
             <MdPlaylistAdd className="icon" />
             Nova OS
           </MenuItem>
-
           <MenuItem
             to="/estoque-atual"
             active={activePage === 2}
