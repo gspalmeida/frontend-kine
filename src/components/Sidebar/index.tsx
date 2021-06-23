@@ -29,13 +29,15 @@ import { AiFillHome } from "react-icons/ai";
 import { FaUserEdit } from "react-icons/fa";
 
 const Sidebar: React.FC = () => {
+  // TODO Provavelmente pra resolver o erro de performance da sidenav(trava se ficar trocando rapido) precise usar o useMemo, para evitar exhaustive-deps desse array;
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const pagesForceNotCloseSidebar = ["/estoque-atual", "/gestao-de-os"];
 
   const [alwaysOpen, setAlwaysOpen] = useState(false);
   const {activePage, setActivePage } = useContext(SideBarContext);
 
   const [name, setName] = useState("");
-  const [avatar, setAvatar] = useState<File | string>("");
+  const [, setAvatar] = useState<File | string>("");
   const [avatarUrl, setAvatarUrl] = useState(AvatarImage);
 
   const { open, setOpen } = useContext(SideBarContext);
