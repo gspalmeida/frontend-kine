@@ -29,7 +29,7 @@ import { AiFillHome } from "react-icons/ai";
 import { FaUserEdit } from "react-icons/fa";
 
 const Sidebar: React.FC = () => {
-  const notCloseSidebar = ["/estoque-atual", "/gestao-de-os"];
+  const pagesForceNotCloseSidebar = ["/estoque-atual", "/gestao-de-os"];
 
   const [alwaysOpen, setAlwaysOpen] = useState(false);
   const {activePage, setActivePage } = useContext(SideBarContext);
@@ -43,8 +43,8 @@ const Sidebar: React.FC = () => {
   const location = useLocation();
 
   useEffect(() => {
-    setAlwaysOpen(notCloseSidebar.includes(location.pathname));
-  }, [location, notCloseSidebar, setAlwaysOpen]);
+    setAlwaysOpen(pagesForceNotCloseSidebar.includes(location.pathname));
+  }, [location, pagesForceNotCloseSidebar, setAlwaysOpen]);
 
   const handleChange = (files: FileList | null) => {
     if (files) {
