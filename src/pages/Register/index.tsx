@@ -21,7 +21,7 @@ const Register: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const [avatar, setAvatar] = useState<File | string>("");
+  const [, setAvatar] = useState<File | string>("");
   const [avatarUrl, setAvatarUrl] = useState(AvatarImage);
 
   const handleChange = (files: FileList | null) => {
